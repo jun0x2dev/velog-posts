@@ -12,8 +12,8 @@ tags: [Java, Java8, Lambda, Stream, Optional, 백엔드, 현대적자바]
 ## 서론
 과거의 자바 코드를 보다 보면 가끔 눈이 침침해질 때가 있습니다. 리스트 하나에서 특정 조건의 데이터를 뽑아내려고 할 뿐인데, `for` 문을 돌리고 `if` 문을 중첩하며 임시 리스트에 `add`를 반복하는 과정이 마치 가내수공업처럼 느껴지기 때문이죠.
 
-![장인이 한땀한땀 코드를 짜는 짤](/images/02_Back-end/java_8_modern/verbose_coding_struggle.png)
-*(여기에 '거대한 톱니바퀴를 수동으로 돌리는 사람'이나 '복잡한 미로에 갇힌 개발자' 짤을 추천합니다!)*
+![명령형 vs 선언형 프로그래밍 비교](/images/02_Back-end/Modern_Java_Core_Technologies/imperative_vs_declarative.png)
+*'어떻게(How)'가 아닌 '무엇(What)'을 처리할지에 집중하는 선언형 프로그래밍과 스트림의 핵심 개념입니다.*
 
 하지만 자바 8이라는 거대한 파도가 밀려오면서 우리의 코딩 인생은 180도 달라졌습니다. 오늘은 자바를 현대적인 언어로 탈바꿈시킨 3대장, **람다**, **스트림**, 그리고 **Optional**이 우리에게 어떤 축복을 내렸는지 파헤쳐 보겠습니다.
 
@@ -43,8 +43,8 @@ list.sort((s1, s2) -> s1.compareTo(s2));
 - **가내수공업(for-loop)**: 내가 직접 바구니를 들고 다니며 물건을 하나씩 확인하고 담습니다.
 - **자동화 공정(Stream)**: 물건들이 벨트 위를 지나가면, 나는 필터링기, 변환기, 정렬기를 배치만 해둡니다.
 
-![Stream 파이프라인 처리 공정](/images/02_Back-end/java_8_modern/stream_pipeline_diagram.png)
-*(데이터 소스로부터 filter, map 같은 중간 연산을 거쳐 최종 연산(collect)으로 이어지는 '파이프라인' 흐름도를 넣어주세요!)*
+![Stream 파이프라인 처리 공정](/images/02_Back-end/Modern_Java_Core_Technologies/stream_pipeline_diagram.png)
+*데이터 소스로부터 중간 연산(filter, map)을 거쳐 최종 연산(collect)으로 이어지는 스트림 파이프라인의 표준 흐름도입니다.*
 
 | 구분 | for-each 루프 | Stream API |
 | :--- | :--- | :--- |
@@ -104,6 +104,4 @@ return Optional.ofNullable(user)
 - Modern Java in Action (라울-가브리엘 우르마 저)
 - [Oracle Docs: Java SE 8 Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
 - Effective Java 3rd Edition (아이템 42 ~ 48: 람다와 스트림)
-
 ---
-*(여기에 '깔끔하게 정리된 책상'이나 '부드럽게 돌아가는 기계 장치' 짤을 넣어 마무리하면 좋습니다!)*

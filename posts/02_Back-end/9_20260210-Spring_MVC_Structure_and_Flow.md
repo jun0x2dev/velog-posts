@@ -12,10 +12,10 @@ tags: [Spring, SpringBoot, SpringMVC, DispatcherServlet, 백엔드, 웹아키텍
 ## 서론
 웹 브라우저 주소창에 URL을 입력하고 '엔터'를 치는 순간, 우리 스프링 서버 내부에서는 거대한 축제가 벌어집니다. 수많은 객체가 일사불란하게 움직이며 사용자가 원하는 데이터를 찾아내고, 예쁘게 포장해서 다시 브라우저로 보내주죠.
 
-우리는 보통 `@Controller` 하나 만들고 `@GetMapping` 붙이면 끝이라고 생각하지만, 그 이면에서는 스프링 MVC라는 정교한 기계 장치가 돌아가고 있습니다. 
+우리는 보통 `@Controller` 하나 만들고 `@GetMapping` 붙이면 끝이라고 생각하지만, 그 이면에서는 스프링 MVC라는 정교한 시스템이 돌아가고 있습니다.
 
-![Spring MVC의 복잡한 흐름 짤](/images/02_Back-end/spring_mvc/spring_mvc_complexity.png)
-*(여기에 '정교하게 맞물린 톱니바퀴'나 '거대한 컨트롤 타워' 짤을 추천합니다!)*
+![DispatcherServlet 중앙 통제 시스템](/images/02_Back-end/Spring_MVC_Structure_and_Flow/dispatcher_servlet_control.png)
+*모든 요청의 입구에서 각 컴포넌트로 작업을 분배하는 DispatcherServlet 중심의 프론트 컨트롤러 아키텍처입니다.*
 
 오늘은 우리가 무심코 사용하던 스프링 MVC가 내부적으로 어떻게 구성되어 있는지, 특히 그 중심에 있는 **DispatcherServlet**이라는 '전설의 지배자'가 어떤 일을 하는지 아주 쉽게 파헤쳐 보겠습니다.
 
@@ -34,8 +34,8 @@ tags: [Spring, SpringBoot, SpringMVC, DispatcherServlet, 백엔드, 웹아키텍
 ### 2. 스프링 MVC의 7단계 릴레이 레이스
 요청이 들어와서 응답이 나갈 때까지, 데이터는 다음의 과정을 거칩니다.
 
-![Spring MVC 동작 흐름도](/images/02_Back-end/spring_mvc/spring_mvc_flow_diagram.png)
-*(Client -> DispatcherServlet -> HandlerMapping -> Adapter -> Controller -> ViewResolver -> View로 이어지는 기술 도식을 넣어주세요!)*
+![Spring MVC 동작 흐름도](/images/02_Back-end/Spring_MVC_Structure_and_Flow/spring_mvc_flow_diagram.png)
+*요청 수신부터 핸들러 매핑, 어댑터 실행, 뷰 렌더링까지 이어지는 Spring MVC의 7단계 처리 프로세스입니다.*
 
 1.  **클라이언트 요청**: 사용자가 브라우저에서 요청을 보냅니다.
 2.  **DispatcherServlet 접수**: "어서 오세요, 제가 처리해 드릴게요."
@@ -92,4 +92,3 @@ Spring MVC는 '분할과 정복'의 정수를 보여줍니다. 각자의 역할�
 - 토비의 스프링 3.1 (이일민 저)
 - [Baeldung - Spring MVC Handler Adapters](https://www.baeldung.com/spring-mvc-handler-adapters)
 ---
-*(여기에 '정교한 지휘를 하는 마에스트로'나 '일사불란한 공장의 공정' 짤을 넣어 마무리하면 좋습니다!)*

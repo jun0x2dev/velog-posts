@@ -12,10 +12,10 @@ tags: [Java, Spring, RestTemplate, WebClient, 외부API, 백엔드, HTTP통신]
 ## 서론
 현대의 백엔드 시스템은 결코 혼자서 살아갈 수 없습니다. 결제를 위해 토스페이먼츠를 호출하고, 알림을 보내기 위해 카카오 메시지 API를 찌르며, 날씨 정보를 가져오기 위해 공공데이터포털을 방문하죠. 
 
-하지만 외부 서비스는 언제든 느려질 수 있고, 가끔은 점검이라는 명목으로 우리를 외면하기도 합니다. 이때 우리가 아무런 준비 없이 외부 API를 호출했다가는, 남의 집 불이 우리 집까지 번지는 '장애 전파'의 비극을 맞이할 수 있습니다. 
+하지만 외부 서비스는 언제든 느려질 수 있고, 가끔은 점검이라는 명목으로 우리를 외면하기도 합니다. 이때 우리가 적절한 대비 없이 외부 API를 호출했다가는, 외부 서비스의 지연이 우리 시스템 전체의 장애로 번지는 '장애 전파' 문제가 발생할 수 있습니다.
 
-![외부 API 장애로 같이 죽어가는 서버 짤](/images/02_Back-end/external_api/external_api_failure.png)
-*(여기에 '도미노처럼 쓰러지는 서버들'이나 '전화기를 붙잡고 우는 개발자' 짤을 추천합니다!)*
+![외부 API 장애 전파 방지 아키텍처](/images/02_Back-end/External_API_Integration/circuit_breaker_concept.png)
+*외부 시스템의 응답 지연이 전체 서버의 스레드 고갈로 이어지지 않도록 타임아웃과 서킷 브레이커를 적용한 안정적인 연동 구조입니다.*
 
 오늘은 스프링이 제공하는 두 가지 강력한 도구, **RestTemplate**과 **WebClient**를 통해 외부와 우아하고 안전하게 소통하는 법을 파헤쳐 보겠습니다.
 
@@ -88,4 +88,3 @@ Mono<String> result = webClient.get()
 - [Spring WebFlux: WebClient Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client)
 - [Baeldung - RestTemplate vs WebClient](https://www.baeldung.com/spring-webclient-resttemplate)
 ---
-*(여기에 '전 세계로 뻗어 나가는 네트워크 망'이나 '질서 정연한 우체국' 짤을 넣어 마무리하면 좋습니다!)*

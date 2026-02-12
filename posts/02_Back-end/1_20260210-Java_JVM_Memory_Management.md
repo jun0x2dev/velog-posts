@@ -10,10 +10,10 @@ tags: [Java, JVM, 백엔드, 메모리관리, GC, 자바공부]
 # Java JVM의 내부 구조와 메모리 관리 전략
 
 ## 서론
-백엔드 개발자로 살아가다 보면 문득 작업 관리자를 열었을 때 소스라치게 놀랄 때가 있습니다. 분명 코드는 몇 줄 안 짠 것 같은데, 자바 프로그램이 RAM을 아주 맛있게 식사하고 있는 모습을 발견하기 때문이죠.
+백엔드 개발자로 살아가다 보면 문득 작업 관리자를 열었을 때 소스라치게 놀랄 때가 있습니다. 분명 코드는 몇 줄 안 짠 것 같은데, 자바 애플리케이션이 RAM을 상당 부분 점유하고 있는 모습을 발견하곤 합니다.
 
-![메모리를 먹어치우는 자바 짤](/images/02_Back-end/java_jvm/ram_hungry_java.png)
-*(여기에 '크롬만큼 메모리를 많이 먹는 자바' 혹은 'RAM을 맛있게 먹는 캐릭터' 짤을 넣어주세요!)*
+![JVM 메모리 관리 구조도](/images/02_Back-end/Java_JVM_Memory_Management/jvm_memory_structure.png)
+*운영체제로부터 할당받은 메모리를 효율적으로 사용하기 위해 JVM이 각 영역(Heap, Stack 등)을 관리하는 내부 구조도입니다.*
 
 이런 현상을 보며 "자바는 왜 이렇게 무거울까?"라는 의문을 품어보셨나요? 그 해답은 바로 자바의 전용 가상 비서인 **JVM(Java Virtual Machine)**에 있습니다. 오늘은 단순히 **메모리를 많이 먹는다**는 현상을 넘어, JVM이 그 메모리를 어떻게 쪼개서 쓰고 있는지, 그리고 우리는 그 안에서 어떤 전략을 취해야 하는지 상세히 파헤쳐 보겠습니다.
 
@@ -24,8 +24,8 @@ tags: [Java, JVM, 백엔드, 메모리관리, GC, 자바공부]
 
 JVM은 실행되는 순간 OS로부터 자기만의 거대한 메모리 영역을 할당받습니다. 마치 통역사가 일하기 편하도록 아주 큰 전셋집을 통째로 빌리는 것과 같습니다. 이 집이 바로 우리가 말하는 **Runtime Data Areas**입니다.
 
-![JVM Runtime Data Areas 구조도](/images/02_Back-end/java_jvm/jvm_runtime_data_areas_diagram.png)
-*(Method Area, Heap, Stack, PC Register, Native Method Stack이 구분되어 있고, 각 영역의 특징이 간략하게 요약된 구조도를 넣어주세요!)*
+![JVM Runtime Data Areas 구조도](/images/02_Back-end/Java_JVM_Memory_Management/jvm_runtime_data_areas_diagram.png)
+*스레드 공유 영역(Heap, Method)과 개별 영역(Stack, PC, Native)으로 구분된 Runtime Data Areas의 상세 구성도입니다.*
 
 ### 2. 메모리라는 공간을 대하는 JVM의 태도
 JVM은 메모리를 효율적으로 쓰기 위해 성격에 따라 구역을 엄격하게 나눕니다. 우리가 가장 눈여겨봐야 할 곳은 **Stack**과 **Heap**입니다.

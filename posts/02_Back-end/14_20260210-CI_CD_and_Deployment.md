@@ -14,8 +14,8 @@ tags: [Docker, GithubActions, CICD, DevOps, 배포, 클라우드, 백엔드]
 
 "내 컴퓨터에선 분명히 잘 됐는데, 서버만 가면 왜 이럴까?" 
 
-![내 컴퓨터에선 되는데 짤](/images/02_Back-end/infra_cicd/it_works_on_my_machine.png)
-*(여기에 '불타는 서버 앞에서 당황한 개발자'나 '내 컴퓨터만 가리키는 캐릭터' 짤을 추천합니다!)*
+![CI/CD 파이프라인 개요도](/images/02_Back-end/CI_CD_and_Deployment/cicd_pipeline_overview.png)
+*코드 푸시부터 빌드, 테스트, 이미지 생성 및 서버 반영까지 이어지는 전체 배포 자동화 파이프라인의 구성도입니다.*
 
 이 지긋지긋한 문제를 해결하기 위해 등장한 것이 바로 **컨테이너(Docker)**와 **자동화(CI/CD)**입니다. 오늘은 배포 버튼 하나로 테스트부터 배포까지 한 방에 끝내는 마법 같은 여정을 떠나보겠습니다.
 
@@ -48,8 +48,8 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
 ### 3. Github Actions: 깃허브에서 일어나는 자동화 마법
 가장 대중적인 CI/CD 도구 중 하나입니다. 코드를 푸시(push)하는 순간 미리 정의한 시나리오대로 움직입니다.
 
-![Github Actions 배포 파이프라인](/images/02_Back-end/infra_cicd/github_actions_pipeline.png)
-*(Push -> Build -> Test -> Docker Build -> Push to Registry -> Deploy로 이어지는 흐름도를 넣어주세요!)*
+![Github Actions 배포 파이프라인](/images/02_Back-end/CI_CD_and_Deployment/github_actions_pipeline.png)
+*코드 변경 시 Github Actions가 감지하여 빌드 및 테스트를 수행하고 결과물을 배포 환경으로 전달하는 자동화 흐름도입니다.*
 
 ```yaml
 # .github/workflows/deploy.yml
@@ -93,4 +93,3 @@ CI/CD와 Docker는 이제 선택이 아닌 필수입니다.
 - [Github Actions 공식 문서](https://docs.github.com/en/actions)
 - 인프라 엔지니어의 길 (가사이 사토시 저)
 ---
-*(여기에 '일사불란하게 움직이는 자동화 공장'이나 '우주선 발사 준비 완료' 짤을 넣어 마무리하면 좋습니다!)*

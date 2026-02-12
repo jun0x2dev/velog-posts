@@ -12,8 +12,8 @@ tags: [Spring, SpringBoot, IoC, DI, 백엔드, 프레임워크, 객체지향]
 ## 서론
 자바를 공부하고 처음 스프링의 세계에 발을 들이면 가장 먼저 마주치는 거대한 장벽이 있습니다. 바로 **IoC(Inversion of Control)**와 **DI(Dependency Injection)**라는 녀석들이죠. 이름부터가 무슨 암호 같아서 우리를 당황하게 만듭니다.
 
-![스프링의 복잡함에 정신이 나간 개발자 짤](/images/02_Back-end/spring_magic/spring_complexity_struggle.png)
-*(여기에 '거대한 기계 장치 앞에서 당황한 캐릭터'나 '마법서를 읽으며 머리를 쥐어짜는 사람' 짤을 추천합니다!)*
+![Spring IoC 컨테이너 개요](/images/02_Back-end/Spring_IoC_and_DI/ioc_container_overview.png)
+*객체의 생성부터 생명주기 관리까지 개발자 대신 수행하는 스프링 IoC 컨테이너의 역할과 개념도입니다.*
 
 분명 자바 공부할 때는 내가 필요할 때 `new` 키워드로 객체를 만들어서 잘 써왔는데, 스프링은 자꾸 "너는 가만히 있어, 내가 다 알아서 해줄게"라고 말합니다. 오늘은 스프링이 왜 내 객체의 주도권을 빼앗아 가려 하는지, 그리고 그 대가로 우리에게 어떤 편안함을 주는지 알아보겠습니다.
 
@@ -38,8 +38,8 @@ IoC가 "주도권을 넘긴다"는 추상적인 개념이라면, **DI**는 그 �
 | **유연성** | 낮음 (부품 갈아끼우기 힘듦) | 높음 (인터페이스만 맞으면 끝) |
 | **테스트 용이성** | 어려움 (가짜 객체 넣기 힘듦) | 쉬움 (Mock 객체 주입 가능) |
 
-![IoC 컨테이너와 Bean 주입 구조도](/images/02_Back-end/spring_magic/ioc_container_di_diagram.png)
-*(스프링 컨테이너 안에 Bean들이 담겨 있고, 필요한 클래스에 화살표로 주입되는 기술 도식을 넣어주세요!)*
+![IoC 컨테이너와 Bean 주입 구조도](/images/02_Back-end/Spring_IoC_and_DI/ioc_container_di_diagram.png)
+*스프링 컨테이너 내부에 등록된 Bean들이 필요한 의존성 위치에 자동으로 주입(DI)되는 흐름도입니다.*
 
 ---
 
@@ -87,4 +87,3 @@ IoC와 DI는 스프링이라는 마법사가 우리에게 선사한 가장 강�
 - 토비의 스프링 3.1 (이일민 저)
 - [Baeldung - Intro to Inversion of Control and Dependency Injection](https://www.baeldung.com/spring-reverese-of-control)
 ---
-*(여기에 '깔끔하게 정렬된 레고 부품들'이나 '서로 잘 맞물린 톱니바퀴' 짤을 넣어 마무리하면 좋습니다!)*

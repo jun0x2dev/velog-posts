@@ -12,8 +12,8 @@ tags: [Spring, SpringBoot, ExceptionHandling, Validation, ControllerAdvice, 백�
 ## 서론
 열심히 API를 개발해서 배포했는데, 사용자가 나이를 입력하는 칸에 "스물다섯 살"이라고 한글을 적어 보냈습니다. 서버는 당황해서 `Internal Server Error (500)`와 함께 정체 모를 영어 문장(Stack Trace)들을 사용자에게 쏟아냅니다. 사용자는 겁에 질려 앱을 삭제하고, 개발자는 밤새 로그를 뒤지며 한숨을 쉽니다.
 
-![에러 메시지에 당황한 사용자 짤](/images/02_Back-end/spring_exception/user_error_horror.png)
-*(여기에 '화면에 쏟아지는 에러 로그를 보고 멘붕 온 캐릭터'나 '폭발하는 서버' 짤을 추천합니다!)*
+![API 예외 처리 아키텍처](/images/02_Back-end/Exception_Handling_and_Validation/exception_handling_architecture.png)
+*컨트롤러 계층에서 발생하는 다양한 예외를 가로채어 공통된 형식으로 변환하는 예외 처리 아키텍처입니다.*
 
 좋은 API는 단순히 '성공'할 때 잘 작동하는 것만이 아닙니다. **'실패'할 때 얼마나 친절하고 우아하게 안내해 주느냐**가 그 서비스의 품격을 결정하죠. 오늘은 스프링이 제공하는 마법 같은 도구들을 이용해, 에러를 우리 편으로 만드는 법을 알아보겠습니다.
 
@@ -91,4 +91,3 @@ public class GlobalExceptionHandler {
 - [Baeldung - Error Handling for REST with Spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)
 - Hibernate Validator Official Guide
 ---
-*(여기에 '방패를 든 기사'나 '안전하게 보호된 성곽' 짤을 넣어 마무리하면 좋습니다!)*

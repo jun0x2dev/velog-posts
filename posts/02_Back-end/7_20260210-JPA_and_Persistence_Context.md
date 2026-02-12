@@ -10,10 +10,10 @@ tags: [Java, Spring, JPA, Hibernate, ORM, 영속성컨텍스트, 백엔드]
 # JPA와 영속성 컨텍스트: 객체와 DB 사이의 보이지 않는 벽을 허물다
 
 ## 서론
-백엔드 개발자에게 데이터베이스는 떼려야 뗄 수 없는 존재입니다. 하지만 자바 객체와 관계형 DB(RDB)는 사실 태생부터가 다릅니다. 객체는 상속과 참조를 좋아하지만, DB는 테이블과 PK/FK로 세상을 바라보죠. 이 거대한 간극을 메우기 위해 우리는 매번 지루한 SQL을 한 땀 한 땀 짜야 했습니다.
+백엔드 개발자에게 데이터베이스는 떼려야 뗄 수 없는 존재입니다. 하지만 자바 객체와 관계형 DB(RDB)는 사실 태생부터가 다릅니다. 객체는 상속과 참조를 좋아하지만, DB는 테이블과 PK/FK로 세상을 바라보죠. 이 거대한 간극을 메우기 위해 우리는 매번 반복적인 SQL을 작성해야 했습니다.
 
-![SQL 노가다에 고통받는 개발자 짤](/images/02_Back-end/jpa_basics/sql_query_hell.png)
-*(여기에 '끝없는 SELECT 문을 작성하며 눈물 흘리는 개발자'나 '거대한 SQL 산을 넘는 캐릭터' 짤을 추천합니다!)*
+![ORM (Object-Relational Mapping) 개념](/images/02_Back-end/JPA_and_Persistence_Context/orm_concept.png)
+*객체 지향 언어의 객체와 관계형 데이터베이스의 테이블을 자동으로 매핑하여 패러다임 불일치를 해결하는 ORM 기술의 핵심 개념입니다.*
 
 하지만 **JPA(Java Persistence API)**라는 구원자가 등장했습니다. 이제 우리는 DB를 '창고'가 아닌 '객체 바구니'처럼 다룰 수 있게 되었습니다. 오늘은 JPA의 심장이자, 모든 마법의 근원인 **영속성 컨텍스트(Persistence Context)**를 유쾌하게 파헤쳐 보겠습니다.
 
@@ -39,8 +39,8 @@ tags: [Java, Spring, JPA, Hibernate, ORM, 영속성컨텍스트, 백엔드]
 #### ③ 쓰기 지연 (Transactional Write-behind): "계산은 나중에 한꺼번에"
 `em.persist()`를 호출하는 즉시 DB에 쿼리가 날아가지 않습니다. '쓰기 지연 SQL 저장소'에 쿼리를 차곡차곡 쌓아두었다가, 트랜잭션이 끝나는 순간(commit) 한 방에 쏟아냅니다.
 
-![JPA 쓰기 지연 도식](/images/02_Back-end/jpa_basics/jpa_write_behind_diagram.png)
-*(Entity Manager가 쿼리를 저장소에 모았다가 flush 하는 과정을 보여주는 기술 도식을 넣어주세요!)*
+![JPA 쓰기 지연 도식](/images/02_Back-end/JPA_and_Persistence_Context/jpa_write_behind_diagram.png)
+*엔티티 매니저가 쿼리를 쓰기 지연 SQL 저장소에 모았다가 트랜잭션 커밋 시점에 한꺼번에 실행(flush)하는 과정입니다.*
 
 ---
 
@@ -86,4 +86,3 @@ JPA는 단순히 SQL을 대신 짜주는 라이브러리가 아닙니다. 객체
 - [Baeldung - Hibernate Persistence Context](https://www.baeldung.com/jpa-hibernate-persistence-context)
 - Hibernate User Guide: Persistence Contexts
 ---
-*(여기에 '데이터가 물 흐르듯 연결되는 도식'이나 '깔끔하게 정리된 창고' 짤을 넣어 마무리하면 좋습니다!)*

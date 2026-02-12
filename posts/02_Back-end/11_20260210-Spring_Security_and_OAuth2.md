@@ -12,8 +12,8 @@ tags: [Spring, SpringBoot, SpringSecurity, OAuth2, 보안, JWT, 백엔드]
 ## 서론
 서비스를 만들다 보면 가장 무서운 순간이 옵니다. 바로 "회원가입과 로그인"을 구현해야 하는 시점이죠. 잘못 만들었다가는 내 소중한 사용자들의 정보가 털리거나, 엉뚱한 사람이 남의 계정으로 로그인하는 대참사가 벌어질 수 있기 때문입니다. 
 
-![보안이 뚫려 당황한 개발자 짤](/images/02_Back-end/spring_security/security_breach_horror.png)
-*(여기에 '자물쇠가 다 부서진 문'이나 '해킹 시도에 당황한 캐릭터' 짤을 추천합니다!)*
+![Spring Security 아키텍처 개요](/images/02_Back-end/Spring_Security_and_OAuth2/spring_security_architecture.png)
+*인증(Authentication)과 인가(Authorization)를 처리하기 위해 여러 필터가 체인 형태로 구성된 Spring Security의 내부 구조도입니다.*
 
 스프링 시큐리티는 이런 우리를 위해 거대하고 튼튼한 성벽을 제공합니다. 하지만 그 성벽이 너무 거대해서 가끔은 개발자인 우리조차 성 안으로 못 들어가는 불상사가 생기기도 하죠. 오늘은 이 거대한 성벽의 구조와, 현대 웹의 필수품인 **OAuth2**를 이용한 소셜 로그인 마법을 파헤쳐 보겠습니다.
 
@@ -37,8 +37,8 @@ tags: [Spring, SpringBoot, SpringSecurity, OAuth2, 보안, JWT, 백엔드]
 - **Authorization Server**: 구글/카카오 인증 서버
 - **Resource Server**: 구글/카카오 데이터 서버
 
-![OAuth2 흐름도](/images/02_Back-end/spring_security/oauth2_flow_diagram.png)
-*(Client, User, Provider 간의 Access Token 발급 과정을 보여주는 기술 도식을 넣어주세요!)*
+![OAuth2 흐름도](/images/02_Back-end/Spring_Security_and_OAuth2/oauth2_flow_diagram.png)
+*사용자(Resource Owner)와 서비스(Client), 그리고 인증 서버(Provider) 간의 토큰 발급 및 검증 프로세스입니다.*
 
 | 용어 | 의미 | 비유 |
 | :--- | :--- | :--- |
@@ -88,4 +88,3 @@ String token = Jwts.builder()
 - [Baeldung - Spring Security OAuth2](https://www.baeldung.com/spring-security-oauth)
 - OAuth 2.0 Simplified (Aaron Parecki 저)
 ---
-*(여기에 '단단하게 잠긴 금고'나 '철통 보안을 자랑하는 요새' 짤을 넣어 마무리하면 좋습니다!)*

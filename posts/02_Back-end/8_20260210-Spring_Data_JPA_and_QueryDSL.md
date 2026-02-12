@@ -12,12 +12,12 @@ tags: [Java, Spring, SpringDataJPA, QueryDSL, JPA, 백엔드, 성능최적화]
 ## 서론
 지난 시간에 JPA의 심장인 영속성 컨텍스트를 살펴봤습니다. 하지만 실무의 거친 파도 속으로 들어가면 또 다른 문제에 직면합니다. 사용자가 선택한 조건에 따라 검색 쿼리가 수시로 변하는 **'동적 쿼리'**를 작성해야 할 때죠. 
 
-문자열을 더해가며 JPQL을 짜다 보면 오타 하나에 런타임 에러가 터지고, 복잡한 쿼리는 가독성이 안드로메다로 가버립니다. 
+문자열을 더해가며 JPQL을 작성하다 보면 오타로 인한 런타임 에러가 발생하기 쉽고, 복잡한 쿼리는 유지보수가 매우 힘들어집니다.
 
-![문자열 쿼리 지옥 짤](/images/02_Back-end/jpa_advanced/string_query_hell.png)
-*(여기에 '복잡한 실타래를 푸는 개발자'나 '오타 하나 찾으려고 돋보기를 든 캐릭터' 짤을 추천합니다!)*
+![타입 안전한(Type-Safe) 쿼리 작성](/images/02_Back-end/Spring_Data_JPA_and_QueryDSL/typesafe_query_concept.png)
+*문자열이 아닌 자바 코드로 쿼리를 조립하여 컴파일 시점에 오류를 발견할 수 있는 QueryDSL의 핵심 이점입니다.*
 
-오늘은 이런 "문자열 쿼리의 공포"로부터 우리를 구원해 줄 **QueryDSL**에 대해 알아보겠습니다. 자바 코드로 쿼리를 짠다는 것이 얼마나 우아하고 안전한지, 그리고 실무에서 마주치는 N+1 문제를 어떻게 해결하는지 파헤쳐 보시죠.
+오늘은 이런 고민으로부터 우리를 구원해 줄 **QueryDSL**에 대해 알아보겠습니다. 자바 코드로 쿼리를 짠다는 것이 얼마나 우아하고 안전한지, 그리고 실무에서 마주치는 N+1 문제를 어떻게 해결하는지 파헤쳐 보시죠.
 
 ## 본론
 
@@ -96,4 +96,3 @@ Spring Data JPA와 QueryDSL의 조합은 현대 자바 백엔드 개발의 '치�
 - [QueryDSL 공식 문서](http://querydsl.com/static/querydsl/latest/reference/html/)
 - [Baeldung - Intro to Querydsl](https://www.baeldung.com/intro-to-querydsl)
 ---
-*(여기에 '정교하게 맞물린 시계 톱니바퀴'나 '안전하게 비행하는 비행기' 짤을 넣어 마무리하면 좋습니다!)*

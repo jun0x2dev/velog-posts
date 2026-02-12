@@ -12,10 +12,10 @@ tags: [Java, 객체지향, OOP, 인터페이스, 추상클래스, 백엔드설�
 ## 서론
 객체지향 프로그래밍(OOP)을 공부할 때 우리는 흔히 '붕어빵 틀' 비유를 만납니다. 하지만 실무에서 우리가 만드는 건 붕어빵이 아니라, 수만 개의 부품이 얽히고설킨 거대한 기계에 가깝습니다. 
 
-부품 하나를 바꿨는데 기계 전체가 멈춰버린다면? 혹은 새로운 기능을 추가하려는데 기존 코드를 다 갈아엎어야 한다면? 이런 비극을 막기 위해 우리는 **추상 클래스**와 **인터페이스**라는 설계 도면을 사용합니다. 오늘은 이 두 녀석이 대체 뭐가 다르고, 언제 써야 우리 본체가 평온할 수 있는지 알아보겠습니다.
+부품 하나를 바꿨는데 기계 전체가 멈춰버린다면? 혹은 새로운 기능을 추가하려는데 기존 코드를 다 갈아엎어야 한다면? 이런 비극을 막기 위해 우리는 **추상 클래스**와 **인터페이스**라는 설계 도면을 사용합니다. 오늘은 이 두 녀석이 대체 뭐가 다르고, 언제 써야 적절한지 알아보겠습니다.
 
-![코드가 꼬여서 고통받는 개발자 짤](/images/02_Back-end/java_oop/messy_code_struggle.png)
-*(여기에 '복잡하게 얽힌 전선'이나 '레고 조립하다 멘붕 온 캐릭터' 짤을 넣어주세요!)*
+![객체지향 설계의 추상화 계층](/images/02_Back-end/Java_Interface_vs_Abstract_Class/oop_abstraction_layers.png)
+*구체적인 구현체에 의존하지 않고 추상화된 계층에 의존하여 설계의 유연성을 확보하는 개념도입니다.*
 
 ## 본론
 
@@ -49,8 +49,8 @@ interface Flyable {
 
 ### 3. 한눈에 비교하는 설계 도면
 
-![추상 클래스 vs 인터페이스 구조적 차이](/images/02_Back-end/java_oop/abstract_vs_interface_diagram.png)
-*(Hero 클래스를 상속받는 전사와, Flyable 인터페이스를 구현하는 새/비행기를 대조하여 Is-A와 Can-Do 관계를 시각화한 도식을 넣어주세요!)*
+![추상 클래스 vs 인터페이스 구조적 차이](/images/02_Back-end/Java_Interface_vs_Abstract_Class/abstract_vs_interface_diagram.png)
+*상속을 통한 확장(Is-A)과 계약을 통한 기능 구현(Can-Do)의 차이를 보여주는 구조적 비교도입니다.*
 
 | 구분 | 추상 클래스 (Abstract Class) | 인터페이스 (Interface) |
 | :--- | :--- | :--- |
@@ -94,4 +94,3 @@ void hunt(Weapon weapon) { weapon.use(); } // Weapon이 칼이든 총이든 상�
 - [Oracle Java Documentation - Interfaces](https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html)
 - 객체지향의 사실과 오해 (조영호 저)
 ---
-*(여기에 '레고 부품들이 정렬된 사진'이나 '깔끔하게 조립된 기계' 짤을 넣어 마무리하면 좋습니다!)*
