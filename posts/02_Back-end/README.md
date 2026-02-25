@@ -23,11 +23,15 @@
 12. **테스트 코드의 정석** - JUnit5와 Mockito를 활용한 단위/통합 테스트
 13. **외부 API 연동** - RestTemplate과 WebClient 활용법
 14. **CI/CD와 배포** - Docker와 Github Actions를 활용한 자동화 환경 구축
+15. **@TransactionalEventListener** - 트랜잭션 안전성을 보장하는 이벤트 기반 설계
+16. **CQRS 패턴** - 명령과 조회의 분리를 통한 확장성 확보
+17. **실시간 데이터 통신** - Polling, SSE, WebSocket 완벽 비교
 
-### Phase 4: Advanced & Reactive Stack
-15. **리액티브 프로그래밍과 Spring WebFlux** - 비동기 논블로킹 패러다임의 이해
-16. **성능 모니터링과 프로파일링** - 프로메테우스와 그라파나 활용하기
-17. **MSA 아키텍처 기초** - 서비스 분리와 API Gateway의 역할
+### Phase 4: Advanced & Distributed System
+18. **리액티브 프로그래밍과 Spring WebFlux** - 비동기 논블로킹 패러다임의 이해
+19. **MSA 아키텍처 기초** - 서비스 분리와 API Gateway의 역할
+20. **장애 전파 방지** - Circuit Breaker와 Fallback 전략 (Resilience4j)
+21. **성능 모니터링과 프로파일링** - 프로메테우스와 그라파나 활용하기
 
 ## 작성 가이드
 - 이론적인 내용뿐만 아니라 실무에서 겪은 트러블슈팅 경험을 포함합니다.

@@ -12,7 +12,7 @@ tags: [Spring, SpringBoot, Transaction, Event, EventListener, TransactionalEvent
 ## 서론
 회원 가입이 성공하면 축하 이메일을 보내고, 가입 축하 쿠폰을 발급해야 하는 기능을 만든다고 가정해 봅시다. 가장 쉬운 방법은 `MemberService`의 `join` 메서드 안에 메일 발송 로직과 쿠폰 발급 로직을 모두 집어넣는 것입니다. 하지만 서비스가 커질수록 이 메서드는 '스파게티 코드'가 되어갈 것이고, 메일 서버가 느려지면 회원 가입 전체가 느려지는 불상사가 발생합니다.
 
-![이벤트 기반 아키텍처를 통한 결합도 낮추기](/images/02_Back-end/Spring_Transactional_Event_Listener/event_driven_decoupling.png)
+![핵심 로직과 부가 기능이 깔끔하게 분리된 유연한 이벤트 기반 아키텍처 구조도](/images/02_Back-end/Spring_Transactional_Event_Listener/event_driven_decoupling.png)
 *핵심 비즈니스 로직과 부가 기능을 이벤트로 분리하여 서비스 간의 결합도를 낮추는 아키텍처 구조도입니다.*
 
 이런 결합을 끊어내기 위해 우리는 '이벤트(Event)'를 사용합니다. 그런데 여기서 아주 무서운 함정이 하나 있습니다. 회원 가입 도중에 에러가 발생해서 DB는 **롤백(Rollback)**되었는데, 축하 이메일은 이미 발송되어 버린다면 어떻게 될까요? 사용자는 존재하지도 않는 계정의 가입 축하 메시지를 받는 황당한 경험을 하게 됩니다.
@@ -49,28 +49,7 @@ tags: [Spring, SpringBoot, Transaction, Event, EventListener, TransactionalEvent
 ![TransactionalEventListener 동작 타이밍](/images/02_Back-end/Spring_Transactional_Event_Listener/transactional_event_listener_phases.png)
 *트랜잭션의 커밋과 롤백 시점에 따라 이벤트 리스너가 실행되는 타이밍을 제어하는 개념도입니다.*
 
-> **컴퓨터의 평**: "주인님, DB에 확실히 저장된 거 확인하고 메일 보낼게요. 괜히 롤백됐는데 축하 메일 보내서 민망해지는 일은 없을 거예요!"
-
----
-
-### 4. 실무력을 높이는 결정적 인사이트
-`@TransactionalEventListener`를 실무에 도입할 때 반드시 마주치게 되는 '삽질' 포인트 3가지입니다.
-
-1.  **AFTER_COMMIT 단계에서는 새 트랜잭션이 필요합니다**: `AFTER_COMMIT` 시점에는 이미 기존 트랜잭션이 끝난 상태입니다. 따라서 리스너 안에서 다시 DB를 수정해야 한다면 `@Transactional(propagation = Propagation.REQUIRES_NEW)`을 사용하여 새로운 트랜잭션을 열어야 합니다. 그렇지 않으면 수정 사항이 DB에 반영되지 않습니다.
-2.  **비동기(@Async)와 함께 사용하세요**: 아무리 커밋 후에 실행된다고 해도, 리스너가 무거운 작업을 수행하면 사용자의 응답 대기 시간이 길어집니다. `AFTER_COMMIT`과 `@Async`를 조합하면, 사용자는 빠른 응답을 받고 부가 기능은 백그라운드에서 안전하게 처리됩니다.
-3.  **이벤트 저장소(Event Log)를 고려하세요**: 만약 트랜잭션은 성공했는데 이벤트 리스너 실행 중에 서버가 죽는다면 어떻게 될까요? 메일 발송이 누락될 수 있습니다. 정말 중요한 로직이라면 이벤트를 DB에 먼저 기록해두는 '아웃박스 패턴(Outbox Pattern)'을 고민해봐야 합니다.
+> ### 아키텍트의 시선
+> 트랜잭션과 이벤트를 결합할 때 가장 중요한 것은 '성공의 정의'를 어디까지로 볼 것인가입니다. 외부 시스템과의 연동이 필수적이라면, 단순한 리스너를 넘어 이벤트의 발행 자체를 보장하는 'Transactional Outbox' 패턴까지 고려해보는 것이 진정한 시니어의 자세입니다.
 
 ## 결론 및 요약 / 회고
-단순히 결합도를 낮추는 것을 넘어, 데이터의 정합성까지 고려하는 것이 진정한 이벤트 기반 설계의 시작입니다.
-- **@EventListener**는 즉시 실행되지만 트랜잭션 안전성이 부족합니다.
-- **@TransactionalEventListener**의 **AFTER_COMMIT**을 사용하여 DB와 외부 시스템 간의 정합성을 맞추세요.
-- 리스너 내의 추가 DB 작업은 **REQUIRES_NEW**가 필요함을 잊지 마세요.
-
-그동안 "왜 리스너에서 DB 수정이 안 되지?" 혹은 "롤백됐는데 왜 알림이 갔지?"라며 머리를 싸매셨던 분들에게 이 글이 작은 이정표가 되길 바랍니다.
-
-오늘도 여러분의 시스템이 예외 상황에서도 흔들리지 않는 정합성을 유지하길 응원합니다!
-
-## 참고 자료
-- Spring Framework Documentation: Transactional Event Listeners
-- [Baeldung - Spring Events](https://www.baeldung.com/spring-events)
-- 실전! 스프링 부트와 JPA 활용 (김영한 저)
