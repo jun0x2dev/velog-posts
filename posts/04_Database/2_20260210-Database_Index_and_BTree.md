@@ -80,9 +80,3 @@ SELECT * FROM members WHERE name LIKE '이준%';
 - **실행 계획(EXPLAIN)**을 확인하여 내 쿼리가 인덱스를 제대로 타고 있는지 항상 의심하세요.
 
 데이터가 수천만 건으로 늘어났을 때도 변함없이 빠른 속도를 유지하는 쿼리, 그것이 실력 있는 백엔드 개발자의 증거입니다.
-
-## 참고 자료
-- Real MySQL 8.0 (백은빈, 이성욱 저)
-- SQL 성능 최적화 (조시 윈 저)
-- [Use The Index, Luke](https://use-the-index-luke.com/)
----

@@ -73,9 +73,3 @@ MySQL은 단순히 데이터를 저장하는 도구를 넘어, **InnoDB**라는 
 - **MVCC**를 이해해야 대규모 트래픽에서도 막힘없는 조회를 설계할 수 있습니다.
 
 엔진의 구조를 알고 쿼리를 짜는 개발자는 결코 막연한 튜닝에 시간을 허비하지 않습니다.
-
-## 참고 자료
-- Real MySQL 8.0 (백은빈, 이성욱 저)
-- [MySQL Official Documentation - The InnoDB Storage Engine](https://dev.mysql.com/doc/refman/8.0/en/innodb-storage-engine.html)
-- 고성능 MySQL (실비아 보트로 저)
----

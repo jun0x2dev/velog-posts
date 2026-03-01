@@ -87,9 +87,3 @@ executor.submit(() -> {
 오늘 공부를 통해 제 코드 속에서 요리사들이 서로 싸우고 있지는 않았는지 반성하게 되었습니다. 단순히 "빠르게" 처리하는 것보다 "정확하게" 처리하는 동시성 설계자가 되기 위해 더 노력해야겠습니다.
 
 오늘도 여러분의 애플리케이션이 데드락 없이 평온하게 돌아가길 응원합니다!
-
-## 참고 자료
-- Java Concurrency in Practice (브라이언 게츠 저)
-- [Baeldung - Java Concurrency](https://www.baeldung.com/java-concurrency)
-- 자바 성능 튜닝 이야기 (이상민 저)
----

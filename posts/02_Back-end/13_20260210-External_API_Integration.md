@@ -82,9 +82,3 @@ Mono<String> result = webClient.get()
 세상은 넓고 우리가 연동해야 할 API는 많습니다. 오늘 배운 도구들을 잘 활용해서, 남의 장애에 휘말리지 않는 강인한 백엔드 시스템을 설계하시길 바랍니다.
 
 오늘도 여러분의 API 호출이 200 OK와 함께 빛의 속도로 돌아오길 응원합니다!
-
-## 참고 자료
-- Spring Framework Documentation: RestTemplate
-- [Spring WebFlux: WebClient Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client)
-- [Baeldung - RestTemplate vs WebClient](https://www.baeldung.com/spring-webclient-resttemplate)
----

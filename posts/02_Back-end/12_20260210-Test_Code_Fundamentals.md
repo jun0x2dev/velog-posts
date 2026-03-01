@@ -101,9 +101,3 @@ class MemberServiceTest {
 처음에는 테스트 코드를 짜는 게 귀찮고 어렵게 느껴질 수 있습니다. 하지만 내가 짠 코드 옆에 든든한 '검수원'이 항상 붙어있다는 느낌을 한 번 맛보게 되면, 다시는 테스트 없는 코드를 배포하고 싶지 않을 것입니다.
 
 오늘도 여러분의 테스트가 모두 초록불(Success)로 가득 차길 응원합니다!
-
-## 참고 자료
-- JUnit 5 User Guide
-- [Baeldung - Mockito Series](https://www.baeldung.com/mockito-series)
-- 단위 테스트 (블라디미르 코리코프 저)
----

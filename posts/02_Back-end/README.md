@@ -26,11 +26,11 @@
 15. **@TransactionalEventListener** - 트랜잭션 안전성을 보장하는 이벤트 기반 설계
 16. **CQRS 패턴** - 명령과 조회의 분리를 통한 확장성 확보
 17. **실시간 데이터 통신** - Polling, SSE, WebSocket 완벽 비교
+18. **CQRS 데이터 동기화 전략** - 이벤트 기반 동기화와 Eventually Consistent 설계
 
 ### Phase 4: Advanced & Distributed System
-18. **리액티브 프로그래밍과 Spring WebFlux** - 비동기 논블로킹 패러다임의 이해
-19. **MSA 아키텍처 기초** - 서비스 분리와 API Gateway의 역할
-20. **장애 전파 방지** - Circuit Breaker와 Fallback 전략 (Resilience4j)
+19. **장애 전파 방지** - Circuit Breaker와 Fallback 전략 (Resilience4j)
+20. **Spring WebMVC vs WebFlux** - 스레드 모델부터 실전 마이그레이션까지
 21. **성능 모니터링과 프로파일링** - 프로메테우스와 그라파나 활용하기
 
 ## 작성 가이드

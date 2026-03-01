@@ -71,9 +71,3 @@ RDB와 NoSQL은 서로 적이 아니라, 서로의 부족한 점을 채워주는
 여러분의 프로젝트가 어떤 데이터베이스 위에서 가장 아름답게 꽃필 수 있을지, 오늘 배운 기준들로 다시 한번 점검해 보시길 바랍니다.
 
 오늘도 여러분의 데이터가 적합한 보금자리를 찾아 안전하게 저장되길 응원합니다!
-
-## 참고 자료
-- 데이터 중심 애플리케이션 설계 (마틴 클렙만 저) - 이 분야의 끝판왕 도서입니다.
-- [AWS - RDB와 NoSQL의 차이점](https://aws.amazon.com/ko/compare/the-difference-between-nosql-and-sql/)
-- [MongoDB - CAP Theorem](https://www.mongodb.com/nosql-explained/cap-theorem)
----

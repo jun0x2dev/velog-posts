@@ -99,9 +99,3 @@ return Optional.ofNullable(user)
 처음에는 함수형 프로그래밍의 사고방식이 낯설 수 있지만, 익숙해지면 다시는 `for` 문을 5줄씩 쓰던 시절로 돌아가고 싶지 않을 것입니다. 더 깔끔하고 안전한 코드를 위해 오늘 당장 스트림 한 줄을 써보는 건 어떨까요?
 
 오늘도 여러분의 코드가 컴파일 에러 없이 우아하게 돌아가길 응원합니다!
-
-## 참고 자료
-- Modern Java in Action (라울-가브리엘 우르마 저)
-- [Oracle Docs: Java SE 8 Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
-- Effective Java 3rd Edition (아이템 42 ~ 48: 람다와 스트림)
----

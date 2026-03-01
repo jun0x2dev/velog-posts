@@ -77,9 +77,3 @@ public void transferMoney(Long fromId, Long toId, int amount) {
 - **비즈니스 로직**과 **트랜잭션 범위**를 명확히 분리하여 성능 저하를 막으세요.
 
 수천 명의 사용자가 동시에 데이터를 건드리는 복잡한 환경에서도 데이터의 무결성을 유지하는 것, 그것이 백엔드 개발자의 진정한 가치라고 생각합니다.
-
-## 참고 자료
-- 데이터베이스 시스템 (Abraham Silberschatz 저)
-- [MySQL Documentation - Transaction Isolation Levels](https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html)
-- Real MySQL 8.0 (백은빈, 이성욱 저)
----

@@ -74,9 +74,3 @@ PostgreSQL은 알면 알수록 그 깊이와 유연함에 놀라게 되는 DB입
 - **Vacuum**의 특성을 이해해야 장기적인 성능 저하를 방지할 수 있습니다.
 
 데이터의 **정확성, 복잡성, 확장성**이 모두 중요한 비즈니스라면 PostgreSQL은 최고의 선택지가 될 것입니다.
-
-## 참고 자료
-- PostgreSQL 내부 구조 (스즈키 사토시 저)
-- [PostgreSQL Official Documentation](https://www.postgresql.org/docs/current/index.html)
-- Mastering PostgreSQL (한스-위르겐 쇤니히 저)
----

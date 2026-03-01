@@ -105,9 +105,4 @@ public void insertionSort(int[] arr) {
 
 앞으로는 코드를 짜다가 "이 데이터를 정렬해야 하는데..." 싶을 때, 무작정 이중 루프를 돌리기 전에 오늘 배운 친구들을 떠올려보세요. 그리고 다음 포스팅에서 배울 **퀵 정렬(Quick Sort)**을 기다리며 "더 빠른 길은 없을까?" 고민해 보시길 바랍니다!
 
-오늘도 즐겁게 코딩하시고, 우리 소중한 컴퓨터에게 휴식을 줍시다! 
-
-## 참고 자료
-- [Visualgo - Sorting](https://visualgo.net/en/sorting) - 버블, 선택, 삽입 정렬이 움직이는 걸 직접 보세요!
-- Hello Coding 그림으로 개념을 잡는 알고리즘
-- [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms) - 다양한 데이터 상태에 따른 정렬 속도 비교 사이트입니다.
+오늘도 즐겁게 코딩하시고, 우리 소중한 컴퓨터에게 휴식을 줍시다!

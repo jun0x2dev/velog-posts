@@ -85,9 +85,3 @@ public class GlobalExceptionHandler {
 예외 처리를 잘 설계해두면 개발자는 밤에 발 뻗고 잘 수 있고, 사용자는 서비스에 믿음을 갖게 됩니다. 완벽한 코드만큼이나 완벽한 에러 처리에 공을 들이는 개발자가 됩시다!
 
 오늘도 여러분의 서버가 예외 없이 평온하길, 설령 예외가 나더라도 우아하게 대처하길 응원합니다!
-
-## 참고 자료
-- Spring Framework Documentation: Exceptions
-- [Baeldung - Error Handling for REST with Spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)
-- Hibernate Validator Official Guide
----

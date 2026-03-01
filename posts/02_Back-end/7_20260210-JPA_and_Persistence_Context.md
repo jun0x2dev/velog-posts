@@ -80,9 +80,3 @@ JPA는 단순히 SQL을 대신 짜주는 라이브러리가 아닙니다. 객체
 이번 공부를 통해 제 코드 속 엔티티들이 영속성 컨텍스트라는 따뜻한 품 안에서 어떻게 관리되고 있는지 그려볼 수 있었습니다. 단순히 데이터를 넣고 빼는 것을 넘어, 영속성 상태를 정교하게 제어할 줄 아는 백엔드 개발자가 되어야겠네요.
 
 오늘도 여러분의 엔티티들이 영속 상태에서 평온하게 숨 쉬길 응원합니다!
-
-## 참고 자료
-- 자바 ORM 표준 JPA 프로그래밍 (김영한 저)
-- [Baeldung - Hibernate Persistence Context](https://www.baeldung.com/jpa-hibernate-persistence-context)
-- Hibernate User Guide: Persistence Contexts
----

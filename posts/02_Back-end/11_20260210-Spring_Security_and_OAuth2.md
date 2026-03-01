@@ -82,9 +82,3 @@ String token = Jwts.builder()
 처음 시큐리티 설정을 할 때는 수많은 클래스와 어노테이션에 압도당할 수 있습니다. 하지만 요청 하나가 필터를 하나씩 통과하는 과정을 머릿속에 그려본다면, 이 거대한 성벽이 우리 서비스를 얼마나 안전하게 지켜주고 있는지 감사하게 될 것입니다.
 
 오늘도 여러분의 성벽이 무너지지 않고 견고하게 유지되길 응원합니다!
-
-## 참고 자료
-- Spring Security Reference Documentation
-- [Baeldung - Spring Security OAuth2](https://www.baeldung.com/spring-security-oauth)
-- OAuth 2.0 Simplified (Aaron Parecki 저)
----

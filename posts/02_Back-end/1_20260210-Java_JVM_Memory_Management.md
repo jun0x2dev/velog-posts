@@ -75,8 +75,3 @@ JVM 구조를 이해했다면, 이제 코드를 짤 때 다음 두 가지를 반
 이번 공부를 통해 제 코드 속 객체들이 메모리 어디에서 숨 쉬고 있는지 상상해 볼 수 있었습니다. 단순히 기능을 구현하는 것을 넘어, 자원의 효율성까지 고민하는 개발자로 한 걸음 더 나아간 기분이네요.
 
 오늘도 여러분의 JVM이 쾌적하게 돌아가길 응원합니다!
-
-## 참고 자료
-- Java Virtual Machine Specification (Java SE 11 Edition)
-- 자바 성능 튜닝 이야기 (이상민 저)
-- [Baeldung - Java Memory Management](https://www.baeldung.com/java-jvm-memory-types)

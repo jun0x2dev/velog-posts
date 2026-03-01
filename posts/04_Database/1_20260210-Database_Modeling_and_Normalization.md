@@ -73,9 +73,3 @@ DB 설계는 서비스의 뼈대를 만드는 작업입니다.
 - 성능 병목이 예상된다면 근거 있는 **반정규화**를 도입하세요.
 
 잘 설계된 DB는 쿼리 한 줄로도 명확한 결과를 내놓습니다. 구조의 힘을 믿고 처음부터 탄탄하게 설계하는 습관을 들여야 합니다.
-
-## 참고 자료
-- 데이터베이스 개론 (이문구 저)
-- [Baeldung - Database Normalization Rules](https://www.baeldung.com/cs/database-normalization)
-- SQL 첫걸음 (아사이 아츠시 저)
----

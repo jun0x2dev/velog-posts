@@ -128,10 +128,3 @@ try {
 - **루아 스크립트**와 **Redisson**으로 동시성 문제를 우아하게 해결하세요.
 
 메모리는 비싼 자원입니다. 모든 데이터를 다 넣으려 하기보다, 꼭 필요한 데이터만 선별해서 관리하는 설계가 고수의 한 끗 차이더라고요!
-
-## 참고 자료
-- [Redis Documentation: Client-side caching](https://redis.io/docs/manual/client-side-caching/)
-- [High Scalability: Redis Sentinel & Cluster](http://highscalability.com/)
-- [Redisson Official Guide: Distributed locks](https://redisson.org/docs/data-and-services/locks-and-synchronizers/)
-
----

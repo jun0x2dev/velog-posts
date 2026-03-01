@@ -83,9 +83,3 @@ AOP는 단순히 중복 코드를 제거하는 기술을 넘어, 객체지향의
 - 하지만 내부 호출 문제처럼 프록시의 한계도 명확히 이해하고 있어야 합니다.
 
 이제 여러분의 코드가 핵심에만 집중하여 더욱 빛나길 응원합니다. 다음 시간에는 데이터베이스를 객체처럼 다루는 JPA의 마법에 대해 알아보겠습니다!
-
-## 참고 자료
-- Spring Framework Documentation: Aspect Oriented Programming with Spring
-- 토비의 스프링 3.1 (이일민 저)
-- [Baeldung - Introduction to Spring AOP](https://www.baeldung.com/spring-aop)
----
